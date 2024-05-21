@@ -5,28 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Mikail Emin Aykan</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
             background-color: #f4f4f4;
-            color: #333;
         }
 
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
             background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
         }
 
         h1,
-        h2,
-        h3 {
+        h2 {
             color: #333;
         }
 
@@ -40,135 +33,172 @@
         }
 
         .info {
-            display: flex;
-            justify-content: space-between;
             margin-bottom: 20px;
         }
 
-        .info div {
-            flex: 1;
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            float: left;
+            margin-right: 70px;
         }
 
-        .info div:first-child {
-            margin-right: 20px;
+        .interactive {
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            background: url('bullet.png') no-repeat left center;
-            background-size: 10px;
-            padding-left: 20px;
-            margin-bottom: 10px;
+        .interactive:hover {
+            background-color: #e9ecef;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Mikail Emin Aykan</h1>
-        <div class="info">
-            <div>
+        <div class="clearfix">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+            <h1>Mikail Emin Aykan</h1>
+        </div>
+        <div class="info row">
+            <div class="col-md-6">
                 <p><strong>Address:</strong> Istanbul</p>
                 <p><strong>Phone:</strong> +905050561474</p>
                 <p><strong>Email:</strong> mikaailaykan@gmail.com</p>
             </div>
-            <div>
+            <div class="col-md-6">
                 <p><strong>Date of Birth:</strong> 08/05/1996</p>
                 <p><strong>Country:</strong> Turkey</p>
                 <p><strong>Marital Status:</strong> Single</p>
                 <p><strong>Driver's License:</strong> B (Passenger car)</p>
             </div>
         </div>
-        <div class="section">
+        <div class="section interactive" onclick="toggleContent('career-summary')">
             <h2>Career Summary</h2>
-            <p>I have over 2 years of experience in game development and software. I have improved myself in the
-                industry with the projects I developed with Unity and the advanced training I received. I aim to take
-                part in creative and innovative projects with my ability to quickly adapt to new technologies.</p>
+            <div id="career-summary">
+                <p>I have over 2 years of experience in game development and software. I have improved myself in the
+                    industry with the projects I developed with Unity and the advanced training I received. I aim to
+                    take part in creative and innovative projects with my ability to quickly adapt to new technologies.
+                </p>
+            </div>
         </div>
-        <div class="section">
+        <div class="section interactive" onclick="toggleContent('education')">
             <h2>Education</h2>
-            <p>Siirt University (2016-2020)</p>
-            <p>Computer Education and Instructional Technology Teaching</p>
+            <div id="education">
+                <p>Siirt University (2016-2020)</p>
+                <p>Computer Education and Instructional Technology Teaching</p>
+            </div>
         </div>
-        <div class="section">
+        <div class="section interactive" onclick="toggleContent('work-experience')">
             <h2>Work Experience</h2>
-            <p><strong>Cmos Technology (2022-2023)</strong></p>
-            <ul>
-                <li>Position: Game Developer</li>
-                <li>Achievements:
-                    <ul>
-                        <li>[Successful project or game name], downloaded by 10,000+ users.</li>
-                        <li>Worked as a team leader on [specific project], reducing project time by 20%.</li>
-                        <li>Developed a new game mechanic, increasing player engagement by 30%.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p><strong>Arena Educational Institutions (2023-Present)</strong></p>
-            <ul>
-                <li>Position: Information Technology Teacher</li>
-            </ul>
+            <div id="work-experience">
+                <h5>Cmos Technology (2022-2023)</h5>
+                <p><strong>Position:</strong> Game Developer</p>
+                <ul>
+                    <li>[Successful project or game name], downloaded by 10,000+ users.</li>
+                    <li>Worked as a team leader on [specific project], reducing project time by 20%.</li>
+                    <li>Developed a new game mechanic, increasing player engagement by 30%.</li>
+                </ul>
+                <h5>Arena Educational Institutions (2023-Present)</h5>
+                <p><strong>Position:</strong> Information Technology Teacher</p>
+            </div>
         </div>
-        <div class="section">
+        <div class="section interactive" onclick="toggleContent('courses-certificates')">
             <h2>Courses and Certificates</h2>
-            <ul>
-                <li>Unity Junior Programmer (2022) - Unity</li>
-                <li>Goldenmade Fundamentals of Programming (2022) - Siliconmade</li>
-                <li>Platinummade FullStack Software Development (2023) - Siliconmade</li>
-                <li>Advanced Game Development Expertise with Unity (2023) - Siliconmade</li>
-            </ul>
+            <div id="courses-certificates">
+                <ul>
+                    <li>Unity Junior Programmer (2022) - Unity</li>
+                    <li>Goldenmade Fundamentals of Programming (2022) - Siliconmade</li>
+                    <li>Platinummade FullStack Software Development (2023) - Siliconmade</li>
+                    <li>Advanced Game Development Expertise with Unity (2023) - Siliconmade</li>
+                </ul>
+            </div>
         </div>
-        <div class="section">
+        <div class="section interactive" onclick="toggleContent('language')">
             <h2>Language</h2>
-            <p>English: B2</p>
+            <div id="language">
+                <p>English: B2</p>
+            </div>
         </div>
-        <div class="section">
+        <div class="section interactive" onclick="toggleContent('technical-skills')">
             <h2>Technical Skills</h2>
-            <ul>
-                <li><strong>Programming Languages:</strong> C#, JavaScript</li>
-                <li><strong>Game Engines:</strong> Unity</li>
-                <li><strong>Data Structures and Algorithms:</strong> Basic and advanced algorithms</li>
-                <li><strong>Tools and Technologies:</strong> Git, Jira, Agile methodologies</li>
-            </ul>
+            <div id="technical-skills">
+                <ul>
+                    <li><strong>Programming Languages:</strong> C#, JavaScript</li>
+                    <li><strong>Game Engines:</strong> Unity</li>
+                    <li><strong>Data Structures and Algorithms:</strong> Basic and advanced algorithms</li>
+                    <li><strong>Tools and Technologies:</strong> Git, Jira, Agile methodologies</li>
+                </ul>
+            </div>
         </div>
-        <div class="section">
+        <div class="section interactive" onclick="toggleContent('project-experience')">
             <h2>Project Experience</h2>
-            <p><strong>Space Explorer</strong></p>
-            <ul>
-                <li>Technologies Used: Unity, C#</li>
-                <li>Description: Developed as a 2D platform game, achieving 5,000+ downloads on Google Play Store.</li>
-                <li>Responsibilities: Game mechanics design, coding, and management of testing processes.</li>
-            </ul>
+            <div id="project-experience">
+                <h5>Space Explorer</h5>
+                <ul>
+                    <li><strong>Technologies Used:</strong> Unity, C#</li>
+                    <li><strong>Description:</strong> Developed as a 2D platform game, achieving 5,000+ downloads on
+                        Google Play Store.</li>
+                    <li><strong>Responsibilities:</strong> Game mechanics design, coding, and management of testing
+                        processes.</li>
+                </ul>
+            </div>
         </div>
-        <div class="section">
+        <div class="section interactive" onclick="toggleContent('hobbies')">
             <h2>Hobbies</h2>
-            <ul>
-                <li>Chess</li>
-                <li>Movies</li>
-                <li>Football</li>
-            </ul>
+            <div id="hobbies">
+                <ul>
+                    <li>Chess</li>
+                    <li>Movies</li>
+                    <li>Football</li>
+                </ul>
+            </div>
         </div>
-        <div class="section">
+        <div class="section interactive" onclick="toggleContent('references')">
             <h2>References</h2>
-            <p>Naz Şimşek</p>
-            <p>Siliconmade Academy - Co-founder</p>
-            <p>Email: naz.simsek@siliconmade.com</p>
+            <div id="references">
+                <p>Naz Şimşek</p>
+                <p>Siliconmade Academy - Co-founder</p>
+                <p>Email: naz.simsek@siliconmade.com</p>
+            </div>
         </div>
-        <div class="section">
+        <div class="section interactive" onclick="toggleContent('portfolio-links')">
             <h2>Portfolio and Other Links</h2>
-            <p>LinkedIn: <a
-                    href="https://www.linkedin.com/in/mikaileminaykan/">https://www.linkedin.com/in/mikaileminaykan/</a>
-            </p>
-            <p>GitHub: <a href="https://github.com/mikailemin">https://github.com/mikailemin</a></p>
-            <p>Portfolio: <a
-                    href="https://drive.google.com/file/d/1nNgntd-zz0AIjR-yd5AlZ3SWzEI7cD35/view?usp=sharing">Portfolio
-                    Link</a></p>
-            <p>Website: <a href="https://mikailemin.github.io">https://mikailemin.github.io</a></p>
+            <div id="portfolio-links">
+                <p>LinkedIn: <a
+                        href="https://www.linkedin.com/in/mikaileminaykan/">https://www.linkedin.com/in/mikaileminaykan/</a>
+                </p>
+                <p>GitHub: <a href="https://github.com/mikailemin">https://github.com/mikailemin</a></p>
+                <p>Portfolio: <a
+                        href="https://drive.google.com/file/d/1nNgntd-zz0AIjR-yd5AlZ3SWzEI7cD35/view?usp=sharing">Portfolio
+                        Link</a></p>
+                <p>Website: <a href="https://mikailemin.github.io">https://mikailemin.github.io</a></p>
+            </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".interactive div");
+            sections.forEach(section => {
+                section.style.display = "none";
+            });
+        });
+    </script>
 </body>
 
 </html>
